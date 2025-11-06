@@ -1,0 +1,63 @@
+EDA Summary Report - cleaned
+==================================================
+Shape: (55886, 19)
+Columns: index, video_id, trending_date, title, channel_title, category_id, publish_date, time_frame, published_day_of_week, publish_country, tags, views, likes, dislikes, comment_count, comments_disabled, ratings_disabled, video_error_or_removed, category_name
+
+Column Types:
+  - index: int64
+  - video_id: object
+  - trending_date: object
+  - title: object
+  - channel_title: object
+  - category_id: int64
+  - publish_date: object
+  - time_frame: object
+  - published_day_of_week: object
+  - publish_country: object
+  - tags: object
+  - views: int64
+  - likes: int64
+  - dislikes: int64
+  - comment_count: int64
+  - comments_disabled: bool
+  - ratings_disabled: bool
+  - video_error_or_removed: bool
+  - category_name: object
+
+Missing Values:
+  - index: 0
+  - video_id: 0
+  - trending_date: 34948
+  - title: 0
+  - channel_title: 0
+  - category_id: 0
+  - publish_date: 0
+  - time_frame: 0
+  - published_day_of_week: 0
+  - publish_country: 0
+  - tags: 0
+  - views: 0
+  - likes: 0
+  - dislikes: 0
+  - comment_count: 0
+  - comments_disabled: 0
+  - ratings_disabled: 0
+  - video_error_or_removed: 0
+  - category_name: 344
+
+Memory Usage: 56.212 MB
+
+Numeric Column Statistics:
+  - index: count=55886, mean=102265.982, std=39337.348, min=0.000, 25%=87572.500, 50%=106927.500, 75%=130164.500, max=161469.000
+  - category_id: count=55886, mean=20.624, std=6.815, min=1.000, 25%=19.000, 50%=24.000, 75%=24.000, max=44.000
+  - views: count=55886, mean=227699.806, std=302256.289, min=274.000, 25%=24802.000, 50%=97095.500, 75%=288748.000, max=1080586.000
+  - likes: count=55886, mean=6402.005, std=9093.163, min=0.000, 25%=429.000, 50%=2145.000, 75%=7913.750, max=30368.000
+  - dislikes: count=55886, mean=227.660, std=310.905, min=0.000, 25%=22.000, 50%=88.000, 75%=281.750, max=1061.000
+  - comment_count: count=55886, mean=881.630, std=1223.172, min=0.000, 25%=74.000, 50%=325.000, 75%=1109.000, max=4214.000
+
+Top 5 Rows:
+{'index': 0, 'video_id': '2kyS6SvSYSE', 'trending_date': nan, 'title': 'WE WANT TO TALK ABOUT OUR MARRIAGE', 'channel_title': 'CaseyNeistat', 'category_id': 22, 'publish_date': '2017-11-13', 'time_frame': '17:00 to 17:59', 'published_day_of_week': 'Monday', 'publish_country': 'US', 'tags': 'SHANtell martin', 'views': 748374, 'likes': 30368, 'dislikes': 1061, 'comment_count': 4214, 'comments_disabled': False, 'ratings_disabled': False, 'video_error_or_removed': False, 'category_name': 'People & Blogs'}
+{'index': 1, 'video_id': '1ZAPwfrtAFY', 'trending_date': nan, 'title': 'The Trump Presidency: Last Week Tonight with John Oliver (HBO)', 'channel_title': 'LastWeekTonight', 'category_id': 24, 'publish_date': '2017-11-13', 'time_frame': '7:00 to 7:59', 'published_day_of_week': 'Monday', 'publish_country': 'US', 'tags': 'last week tonight trump presidency|"last week tonight donald trump""|""john oliver trump""|""donald trump"""', 'views': 1080586, 'likes': 30368, 'dislikes': 1061, 'comment_count': 4214, 'comments_disabled': False, 'ratings_disabled': False, 'video_error_or_removed': False, 'category_name': 'Entertainment'}
+{'index': 2, 'video_id': '5qpjK5DgCt4', 'trending_date': nan, 'title': 'Racist Superman | Rudy Mancuso, King Bach & Lele Pons', 'channel_title': 'Rudy Mancuso', 'category_id': 23, 'publish_date': '2017-11-12', 'time_frame': '19:00 to 19:59', 'published_day_of_week': 'Sunday', 'publish_country': 'US', 'tags': 'racist superman|"rudy""|""mancuso""|""king""|""bach""|""racist""|""superman""|""love""|""rudy mancuso poo bear black white official music video""|""iphone x by pineapple""|""lelepons""|""hannahstocking""|""rudymancuso""|""inanna""|""anwar""|""sarkis""|""shots""|""shotsstudios""|""alesso""|""anitta""|""brazil""|""Getting My Driver\'s License | Lele Pons"""', 'views': 1080586, 'likes': 30368, 'dislikes': 1061, 'comment_count': 4214, 'comments_disabled': False, 'ratings_disabled': False, 'video_error_or_removed': False, 'category_name': 'Comedy'}
+{'index': 3, 'video_id': 'puqaWrEC7tY', 'trending_date': nan, 'title': 'Nickelback Lyrics: Real or Fake?', 'channel_title': 'Good Mythical Morning', 'category_id': 24, 'publish_date': '2017-11-13', 'time_frame': '11:00 to 11:59', 'published_day_of_week': 'Monday', 'publish_country': 'US', 'tags': 'rhett and link|"gmm""|""good mythical morning""|""rhett and link good mythical morning""|""good mythical morning rhett and link""|""mythical morning""|""Season 12""|""nickelback lyrics""|""nickelback lyrics real or fake""|""nickelback""|""nickelback songs""|""nickelback song""|""rhett link nickelback""|""gmm nickelback""|""lyrics (website category)""|""nickelback (musical group)""|""rock""|""music""|""lyrics""|""chad kroeger""|""canada""|""music (industry)""|""mythical""|""gmm challenge""|""comedy""|""funny""|""challenge"""', 'views': 343168, 'likes': 10172, 'dislikes': 666, 'comment_count': 2146, 'comments_disabled': False, 'ratings_disabled': False, 'video_error_or_removed': False, 'category_name': 'Entertainment'}
+{'index': 4, 'video_id': 'd380meD0W0M', 'trending_date': nan, 'title': 'I Dare You: GOING BALD!?', 'channel_title': 'nigahiga', 'category_id': 24, 'publish_date': '2017-11-12', 'time_frame': '18:00 to 18:59', 'published_day_of_week': 'Sunday', 'publish_country': 'US', 'tags': 'ryan|"higa""|""higatv""|""nigahiga""|""i dare you""|""idy""|""rhpc""|""dares""|""no truth""|""comments""|""comedy""|""funny""|""stupid""|""fail"""', 'views': 1080586, 'likes': 30368, 'dislikes': 1061, 'comment_count': 4214, 'comments_disabled': False, 'ratings_disabled': False, 'video_error_or_removed': False, 'category_name': 'Entertainment'}
