@@ -81,18 +81,28 @@ class YouTubeDataCleaner:
         logger.info("Converting data types...")
         if self.df is None:
             raise ValueError("Data not loaded. Call load_data() first.")
-
+    
         numeric_cols = ['views', 'likes', 'dislikes', 'comment_count', 'category_id']
         for col in numeric_cols:
             if col in self.df.columns:
                 self.df[col] = pd.to_numeric(self.df[col], errors='coerce')
         
-        date_cols = ['publish_date', 'trending_date']
-        for col in date_cols:
-            if col in self.df.columns:
-                self.df[col] = pd.to_datetime(self.df[col], errors='coerce')
-        
+        # Handle dates carefully
+        if 'publish_date' in self.df.columns:
+            self.df['publish_date'] = pd.to_datetime(self.df['publish_date'], errors='coerce')
+    
+        if 'trending_date' in self.df.columns:
+            try:
+                # Try YouTube's special format: yy.dd.mm
+                self.df['trending_date'] = pd.to_datetime(
+                    self.df['trending_date'], format='%y.%d.%m', errors='coerce'
+                )
+            except Exception:
+                # Fallback generic parsing
+                self.df['trending_date'] = pd.to_datetime(self.df['trending_date'], errors='coerce')
+    
         return self
+
     
     def handle_outliers(self, method='cap', threshold=1.5):
         logger.info(f"Handling outliers using {method} (threshold={threshold})...")
@@ -135,7 +145,9 @@ class YouTubeDataCleaner:
                 22: 'People & Blogs', 23: 'Comedy', 24: 'Entertainment',
                 25: 'News & Politics', 26: 'Howto & Style', 27: 'Education',
                 28: 'Science & Technology', 29: 'Nonprofits & Activism',
-                43: 'Shows', 44: 'Trailers'
+                43: 'Shows', 44: 'Trailers',
+                19:'Travel & Events',
+                30: "Movies"
             }
             self.df['category_name'] = self.df['category_id'].map(video_category)
         return self
