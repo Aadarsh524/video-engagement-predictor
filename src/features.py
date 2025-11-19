@@ -1,7 +1,3 @@
-"""
-Feature Extraction Module for Video Engagement Predictor
-Based on notebooks 03 and 04
-"""
 
 import pandas as pd
 import numpy as np

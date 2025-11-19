@@ -10,13 +10,9 @@ Doing EDA
 Visualizition Data Pattern for easier understanding of data
 ......
 
-Week 1 Summary
--> As views count werer so much higher so we used log to format datas values for easier representation and analysis.
--> First we saw distribution of videos on different metrices usiing histogram 
--> Then we drew boxplot for more deeper understading of outlier on datas
--> We also see density curve to know more data values 
--> We did time series analysis by day of week then knew that there is maximum view on videos posted on friday
--> we delved more into times series to usind monthly data and saw there was sudden rise in view count during november of 2011 and sudden burst after 2017 June
--> Likes, Dislikes, Comment Count has strong correlation with views
--> We also did categorical analysis by genre videos and saw that music is the number one category 
--> Also it is a category that has maximum outliers with 10117
+| Model               | RMSE       | MAE        | R²         |
+| ------------------- | ---------- | ---------- | ---------- |
+| Linear Regression   | 1.4781     | 1.1791     | 0.0651     |
+| Random Forest       | 1.3451     | 1.0424     | 0.2258     |
+| XGBoost (Default)   | ~1.36*     | ~1.05*     | ~0.20*     |
+| **XGBoost (Tuned)** | **1.3285** | **1.0316** | **0.2448** |
