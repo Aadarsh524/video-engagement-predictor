@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import numpy as np
+torch.serialization.add_safe_globals([np.core.multiarray.scalar])
 from sentence_transformers import SentenceTransformer
 import pickle
 
@@ -46,7 +47,7 @@ class ModelLoader:
     # Load PyTorch Model
     # -------------------------
     def _load_pytorch_model(self):
-        checkpoint = torch.load(self.pytorch_model_path, map_location=self.device)
+        checkpoint = torch.load(self.pytorch_model_path, map_location=self.device,  weights_only=False)
         config = checkpoint['model_config']
         model = MultimodalModel(
             tabular_input_dim=config['tabular_input_dim'],
