@@ -25,22 +25,35 @@ day_map = {
 }
 
 features = [
-    'title_length', 
-    'uppercase_words', 
-    'sentiment_polarity', 
-    'sentiment_subjectivity',
-    'category_id',  
-    'published_day_of_week_num',
-    'hour_of_trending',
-    'days_until_trending',
+    
+    # --- Title / NLP features ---
+    'title_length',
+    'title_word_count',
+    'uppercase_words',
     'num_emojis',
     'has_emoji',
     'contains_numbers_or_emojis',
+    'has_question',
+    'is_clickbait',
+    'sentiment_polarity',
+    'sentiment_subjectivity',
+
+    # ---  content ---
+    'top50_pca1',
+    'top50_pca2',
+    'top50_pca3',
+
+    # --- Time Features ---
+    'is_published_weekend',
+
+    # --- Metadata ---
+    'category_id',
     'comments_disabled',
     'ratings_disabled',
-    'is_english',
-]
 
+
+     'days_until_trending',   
+]
 
 class ModelEvaluator:  
     def __init__(self, complete_data_path):
@@ -61,17 +74,18 @@ class ModelEvaluator:
         return self
     
     def prepare_train_test_split(self):  
-        """Prepare train/test split and store as instance variables"""
+        """Prepare train/test split with new features"""
         X = self.df[features]
         y = np.log1p(self.df['views'])
-        
+    
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
             X, y, test_size=0.2, random_state=42
         )
-        
+    
         logger.info(f"Train set: {len(self.X_train)} samples")
         logger.info(f"Test set: {len(self.X_test)} samples")
         return self
+
     
     def linear_regression(self):
         """Train and evaluate Linear Regression model"""
